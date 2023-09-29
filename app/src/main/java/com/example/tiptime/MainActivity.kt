@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private var cont = 0
@@ -29,7 +30,11 @@ class MainActivity : AppCompatActivity() {
                     boton.textSize = 22.0F
                     boton.text = "Ha hecho click varias veces ($cont)!"
                 }
-                10 -> boton.text = "Te has pasado de clicks!"
+                10 ->{
+                    boton.text = "Te has pasado de clicks!"
+                    Toast.makeText(this, "El botón ha sido deshabilitado", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         }
